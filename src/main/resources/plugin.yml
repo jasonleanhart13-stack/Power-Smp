@@ -1,0 +1,45 @@
+name: Powers
+version: 1.0.0
+main: dev.powers.PowersPlugin
+api-version: '26.3'
+description: 20 random powers with passives, two abilities each, cooldown boss bars and a power menu.
+commands:
+  ability:
+    description: Use your power's abilities
+    usage: /ability <1|2|3|4|menu|cooldown|set>
+    permission: powers.use
+  power:
+    description: Show your power, or change an ability's cooldown/damage
+    usage: /power power  |  /power <power> ability <1|2> change <cooldown|damage|length> <number>
+    permission: powers.info
+  legendary:
+    description: List or give legendary items
+    usage: /legendary <list|give>
+    permission: powers.use
+  trust:
+    description: Your abilities will not hurt this player
+    usage: /trust <player>
+    permission: powers.use
+  untrust:
+    description: Remove a player from your trusted list
+    usage: /untrust <player>
+    permission: powers.use
+permissions:
+  powers.info:
+    description: Use /power power
+    default: true
+  powers.admin:
+    description: Change ability cooldowns and damage server-wide
+    default: op
+  powers.use:
+    description: Use /ability 1 and /ability 2
+    default: true
+  powers.menu:
+    description: Open the power menu and switch powers
+    default: op
+  powers.cooldown:
+    description: Reset your own cooldowns
+    default: op
+  powers.set:
+    description: Set a player's power
+    default: op
